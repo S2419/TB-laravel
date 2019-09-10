@@ -66,6 +66,11 @@
             .logo{
                 text-align: center;
             }
+            
+            
+            .disclaimer{
+                text-align: center;
+            }
 
             .links > a {
                 color: white;
