@@ -21,6 +21,6 @@
 <br>
     <br>
     <br>
-    @include('partials.footer')
+    @include('partials.Footer')
 
 @endsection
