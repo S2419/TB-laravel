@@ -20,7 +20,7 @@ class SearchController extends Controller
 
         $posts = Post::search($query)->paginate(10);
 
-        return view('search')->with('posts', $posts);
+        return view('Search')->with('posts', $posts);
     }
 }
 
