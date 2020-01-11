@@ -16,12 +16,13 @@ class Comment extends Model
      * @var array
      */
 
-    protected $fillable = ['comment','commentable_type','commentable_id', 'user_id'
+    protected $fillable = ['id','body','commentable_type','commentable_id', 'user_id', 'parent_id',
     ];
 
-   /* /**
-     * Get the owning comment model.
-     */
+
+    /* /**
+      * Get the owning comment model.
+      */
 
     /*/**
      * Get the owning commentable model.
@@ -37,14 +38,9 @@ class Comment extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-   public function comments()
+    public function replies()
     {
-        return $this->morphMany(Comment::class, 'commentable')->whereNull('commentable_id');
-    }
-
-    public function post()
-    {
-        return $this->belongsTo(Post::class, 'post_id');
+        return $this->hasMany(Comment::class, 'parent_id');
     }
 
 

@@ -35,6 +35,7 @@
                     <input type="submit" class="pull-right btn btn-primary btn-round">
                 </form>
                 <a href="{{ route('EditProfile') }}" class="btn btn-primary btn-neutral">Edit Profile </a>
+                <a href="{{ route('Followlist')}}" class="btn btn-primary btn-neutral">Follow list </a>
                 <hr>
             </div>
 

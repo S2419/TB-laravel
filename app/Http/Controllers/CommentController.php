@@ -28,26 +28,45 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
     public function store(Request $request)
     {
-
         $comment = new Comment;
-        $comment->comment = $request->input('comment');
+        $comment->body = $request->get('comment_body');
         $comment->user()->associate($request->user());
         $post = Post::find($request->get('post_id'));
         $post->comments()->save($comment);
-        $comments = Comment::where('commentable_id', $post->id )->first();
-        $post = Post::where('id', $post->id)->first();
+
 
         if ($post->user_id != $comment->user_id) {
             $user = User::find($post->user_id);
             $user->notify(new NewComment($comment));
+
         }
-        //dd($comment);
-        return view('Post', ['comments' => $comments, 'post' => $post]);
+
+        return back();
     }
 
+    public function replyStore(Request $request)
+    {
+        $reply = new Comment();
+        $reply->body = $request->get('comment_body');
+        $reply->user()->associate($request->user());
+        $reply->parent_id = $request->get('comment_id');
+        $post = Post::find($request->get('post_id'));
+
+        $post->comments()->save($reply);
+
+        //$replies = Comment::where('commentable_id', $item->id)->first();
+        //$item = Item::where('id', $item->id)->first();
+        //$quantityLevel = getQuantityLevel($item->quantity);
+        //return view('Productdetails', ['comments' => $replies,  'item' => $item, 'quantityLevel' => $quantityLevel]);
+        //return view('home', compact ('comments, replies'));
+        if ($post->user_id != $reply->user_id) {
+            $user = User::find($post->user_id);
+            //$user->notify(new NewMessage($reply));
+        }
+        return back();
+    }
 
 
     public function fetchComments()

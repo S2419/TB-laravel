@@ -52,4 +52,10 @@ window.Pusher = require('pusher-js');
      key: '0650cfd9d97d2a766529',
      encrypted: false,
      authEndpoint: '{!! env("APP_URL") !!}/broadcasting/auth',
+     authHost: "http://localhost/YourEarth/public",
+     auth: {
+         headers: {
+             'X-CSRF-Token': this.csrfToken
+         }
+     }
  });

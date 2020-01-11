@@ -5,25 +5,22 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-//use Illuminate\Notifications\Messages\MailMessage;
-use App\Comment;
+use Illuminate\Notifications\Messages\MailMessage;
 use App\User;
-use Illuminate\Notifications\Messages\BroadcastMessage;
-use App\Post;
-use Illuminate\Notifications\Notifiable;
-class NewComment extends Notification implements ShouldQueue
+
+class NewFollower extends Notification
 {
     use Queueable;
-    protected $comment;
+    protected $follower;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Comment $comment)
+    public function __construct(User $follower)
     {
-        $this->comment = $comment;
+        $this->follower = $follower;
     }
 
     /**
@@ -34,22 +31,29 @@ class NewComment extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['database', 'broadcast'];
+        return ['database' , 'broadcast'];
     }
 
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
     public function toDatabase($notifiable)
     {
         return [
             'id' => $this->id,
             'read_at' => null,
             'data' => [
-                'comment' => $this->comment->comment,
-                'user_id' => $this->comment->user_id,
-                'post_id' => $this->comment->commentable_id,
+                'follower_id' => $this->follower->id,
+                'follower_name' => $this->follower->name,
             ],
 
         ];
+
     }
+
 
     /**
      * Get the array representation of the notification.
@@ -63,15 +67,9 @@ class NewComment extends Notification implements ShouldQueue
             'id' => $this->id,
             'read_at' => null,
             'data' => [
-                'comment' => $this->comment->comment,
-                'user_id' => $this->comment->user_id,
-                'post_id' => $this->comment->commentable_id,
-
+                'follower_id' => $this->follower->id,
+                'follower_name' => $this->follower->name,
             ],
-
         ];
     }
-
-
-
 }

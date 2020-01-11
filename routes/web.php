@@ -80,25 +80,20 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'user.unfollow',
     ]);
 
-    Route::post('search', [
-        'uses' => 'SearchController@Postsearch',
-        'as' => 'search',
-    ]);
-
-    Route::post('Postsearch', [
-        'uses' => 'SearchController@Postsearch',
-        'as' => 'Postsearch',
-    ]);
 
     Route::get('post/{id}', [
         'uses' => 'PostController@show',
         'as' => 'post.show',
     ]);
 
-
     Route::post('comment/store', [
         'uses' => 'CommentController@store',
         'as' => 'comment.add'
+    ]);
+
+    Route::post('reply/store',[
+        'uses' => 'CommentController@replyStore',
+        'as' => 'reply.add'
     ]);
 
     Route::get('/notifications', 'NotificationsController@notifications');
@@ -108,12 +103,10 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'comments'
     ]);
 
-
     Route::post('/notifications/read', [
         'uses' => 'NotificationsController@markAsRead',
         'as' => 'markAsRead',
     ]);
-
 
 
     Route::get('editcomment/{id}', [
@@ -171,5 +164,74 @@ Route::group(['middleware' => ['auth']], function() {
         'uses' => 'UserController@destroy',
         'as' => 'user.destroy'
     ]);
+
+    Route::get('chat',[
+        'uses' => 'MessagesController@chat',
+        'as' => 'chat',
+    ]);
+
+    Route::get('users/{user}/Follow', [
+        'uses' => 'ProfilesController@Follow',
+        'as' => 'user.follow',
+    ]);
+
+    Route::get('users/{user}/unFollow', [
+        'uses' => 'ProfilesController@unFollow',
+        'as' => 'user.unfollow',
+    ]);
+
+    Route::get('followings',[
+        'uses' => 'MessagesController@followings',
+        'as' => 'followings'
+    ]);
+    Route::get('followers', [
+        'uses' => 'MessagesController@fetchFollowers',
+        'as' => 'fetchFollowers',
+    ]);
+    Route::get('/privateMessages/{user}', [
+        'uses' => 'MessagesController@privateMessages',
+        'as' => 'privateMessages',
+    ]);
+
+    Route::post('/privateMessages/{user}', [
+        'uses' => 'MessagesController@sendMessage',
+        'as' => 'privateMessages.store',
+    ]);
+
+
+    Route::get('Users',[
+        'uses' => 'SearchController@getUsersearch',
+        'as' => 'getUsersearch'
+    ]);
+
+    Route::post('Usersearch',[
+        'uses' => 'SearchController@Usersearch',
+        'as' => 'Usersearch',
+    ]);
+
+    Route::get('Posts',[
+        'uses' => 'SearchController@getPostsearch',
+        'as' => 'getPostsearch'
+    ]);
+
+
+    Route::get('Postsearch', [
+        'uses' => 'SearchController@getPostsearch',
+        'as' => 'Postsearch',
+    ]);
+
+
+    Route::post('Postsearch', [
+        'uses' => 'SearchController@Postsearch',
+        'as' => 'Postsearch',
+    ]);
+
+
+    Route::get('followlist',[
+        'uses' => 'ProfilesController@followlist',
+        'as' => 'Followlist',
+    ]);
+
+
 });
 

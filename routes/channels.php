@@ -15,4 +15,9 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
+Broadcast::channel('privateChat.{userId}', function ($user, $userId){
+    //return $user->id === $userId;
+    return $user->id === User::findOrNew($userId)->user_id;
+    //return Auth::check();
+});
 

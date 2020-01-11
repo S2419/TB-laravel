@@ -183,6 +183,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
 
         Laravel\Scout\ScoutServiceProvider::class,
+
+        Overtrue\LaravelFollow\FollowServiceProvider::class
     ],
 
     /*

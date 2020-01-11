@@ -7,6 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "algolia/algoliasearch-client-php": "^1.27",
+        "doctrine/dbal": "^2.5",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.5",
         "laravel/framework": "5.4.*",
@@ -14,6 +15,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "nicolaslopezj/searchable": "^1.0",
+        "overtrue/laravel-follow": "^1.1",
         "pusher/pusher-php-server": "^3.4"
     },
     "require-dev": {

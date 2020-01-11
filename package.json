@@ -19,9 +19,25 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "gulp": "^4.0.2",
-    "laravel-echo": "^1.5.4",
-    "pusher-js": "^5.0.0",
-    "vue-resource": "^1.5.1"
-  }
+    "laravel-echo": "^1.4.0",
+    "pusher-js": "^4.3.1",
+    "vue-star-rating": "^1.6.1"
+  },
+  "name": "thebrotherhood",
+  "description": "<p align=\"center\"><img src=\"https://laravel.com/assets/img/components/logo-laravel.svg\"></p>",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S2419/TB-laravel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S2419/TB-laravel/issues"
+  },
+  "homepage": "https://github.com/S2419/TB-laravel#readme"
 }

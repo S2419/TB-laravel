@@ -27,7 +27,7 @@ window.Echo = new Echo({
     broadcaster: 'pusher',
     key: '0650cfd9d97d2a766529',
     cluster: 'eu',
-    encrypted: false,
+    encrypted: true,
 });
 
 var notifications = [];
@@ -41,6 +41,10 @@ var notifications = [];
 Vue.component('example', require('./components/Example.vue'));
 //Vue.component('comments', require('./components/Comments.vue'));
 //Vue.component('comment-add', require('./components/CommentAdd.vue'));
+Vue.component('example', require('./components/Example.vue'));
+Vue.component('chat-messages', require('./components/ChatMessages.vue'));
+//Vue.component('message-form', require('./components/MessageForm.vue'));
+Vue.component('message-list', require('./components/MessageList.vue'));
 
 
 const main = new Vue ({
@@ -49,7 +53,8 @@ const main = new Vue ({
 });
 
 const NOTIFICATION_TYPES = {
-    comment: 'App\\Notifications\\NewComment'
+    comment: 'App\\Notifications\\NewComment',
+    follow: 'App\\Notifications\\NewFollower'
 };
 $(document).ready(function(){
     //see logged in
@@ -89,12 +94,18 @@ function makeNotification(notification) {
 // get the notification route based on it's type
 function routeNotification(notification) {
     var to = '?read=' + notification.id;
-    if(notification.type === NOTIFICATION_TYPES.comment) {
+    if (notification.type === NOTIFICATION_TYPES.comment) {
         to = 'post/' + notification.data.data.post_id + to;
+        //console.log(to);
+    } else if (notification.type === NOTIFICATION_TYPES.follow) {
+        to = 'followlist' + to;
+        console.log(to)
+    } else if (notification.type === NOTIFICATION_TYPES.comment) {
+        to = 'chat/' + notification.data.data.message_id + to;
 
     }
-    console.log(to);
     return '/' + to;
+
 }
 
 // get the notification text based on it's type
@@ -103,6 +114,12 @@ function makeNotificationText(notification) {
     if(notification.type === NOTIFICATION_TYPES.comment) {
         const name = notification.data.name;
         text += 'New comment on your post!'.fontcolor('black');
+    } else if (notification.type === NOTIFICATION_TYPES.follow) {
+        const name = notification.data.data.follower_name;
+        text += '<strong> New </strong> follower'.fontcolor('black');
+    } else if (notification.type === NOTIFICATION_TYPES.comment) {
+        const name = notification.data.name;
+        text += '<strong>' + name + '</strong> sent you a message'.fontcolor('black')
     }
     return text;
 }

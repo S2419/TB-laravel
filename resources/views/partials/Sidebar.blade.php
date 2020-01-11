@@ -39,9 +39,9 @@
                 </li>
 
                 <li style="padding:30px;">
-                        <a class="active" href="{{ route('home') }}">
-                            <i class="now-ui-icons location_world"></i>
-                            <p>Home</p>
+                        <a class="active" href="{{ route('chat') }}">
+                            <i class="now-ui-icons ui-2_chat-round"></i>
+                            <p>Chat</p>
                         </a>
                 </li>
 

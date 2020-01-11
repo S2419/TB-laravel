@@ -28,6 +28,14 @@
 
             <div class="title-header text-black">
                 <div style="text-align: center"><header><h1>{{ $user->name  }}</h1></header></div>
+                @if(auth()->user()->hasNot($user))
+                    @if(auth()->user()->hasFollowed($user))
+                        <a href="{{ route('user.unfollow', $user) }}" class="btn btn-danger">Unfollow</a>
+                    @else
+                        <a href="{{ route('user.follow', $user) }}" class="btn btn-success">Follow</a>
+                    @endif
+                @endif
+
             </div>
             <div class="content-center">
                 <img class="mx-auto d-block" src="/uploads/profilepics/{{ $user->profilepic }}"  style= "width:150px; height:150px; vertical-align:middle; border-radius:50%; margin-right:auto; margin-left:auto;">

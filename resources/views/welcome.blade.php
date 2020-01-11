@@ -124,6 +124,12 @@
                 <img src="{{ URL::to('/assets/img/Handlogo.JPG') }}" style= "width:200px; height:170px; ">
                 </div>
 
+
+                <div class="disclaimer">
+                    <strong>*Disclaimer*</strong>
+                    <strong>Advice given on this forum is not from officials or professionals, please take caution and use advice to your discretion. TheBrotherhood is not responsible and only advises from experience to help you. Enjoy.</strong>
+                </div>
+
         </div>
 
         </div>

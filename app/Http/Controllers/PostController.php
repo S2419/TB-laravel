@@ -72,7 +72,7 @@ class PostController extends Controller
         Session::flash('message', 'Post has been deleted!');
 
         $posts = Post::all();
-        return redirect()->route('home', ['items' => $posts]);
+        return redirect()->route('home', ['posts' => $posts]);
     }
 
     public function show($id)
