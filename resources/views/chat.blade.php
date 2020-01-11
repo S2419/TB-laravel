@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    @include('partials.sidebar')
+    @include('partials.Sidebar')
     <div id="main" class="container">
         <chat-messages :user="{{auth()->user()}}">
         </chat-messages>
