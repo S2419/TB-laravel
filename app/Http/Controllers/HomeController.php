@@ -22,19 +22,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function home()
     {
         //$posts = Post::all();
         $posts = Post::all()->sortByDesc('created_at');
         return view('home', ['posts' => $posts]);
     }
-
-    public function home()
-    {
-        //$posts = Post::all();
-        $posts = Post::all()->sortByDesc('created_at');
-        return view('home', ['posts' => $posts]);
-    }
+   
 
 
 }

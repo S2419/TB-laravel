@@ -53,8 +53,10 @@ class SearchController extends Controller
 
         $query = $request->input('query');
 
+
         $posts = Post::search($query)->paginate(3);
         return view('Postsearch')->with('posts', $posts);
+
     }
 
 

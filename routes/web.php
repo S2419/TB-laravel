@@ -22,10 +22,9 @@ Auth::routes();
 //Route::group(['middleware' =>  ['auth', 'web']], function () {
 Route::group(['middleware' => ['auth']], function() {
 
-    Route::get('/home', 'Homecontroller@Home')->name('home');
+  
+   Route::get('/home', 'HomeController@Home')->name('home');
 
-
-    Route::get('/home', 'HomeController@index')->name('home');
 
 
     Route::post('post', [

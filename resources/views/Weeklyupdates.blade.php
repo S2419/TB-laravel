@@ -11,8 +11,9 @@
             </div>
 
             <div class="information">
-                <p>As mentioned in the previous page, updates will be coming soon, they take a bit of time. This page will also be an area where I will post things recommended to me by you guys or things I find. This week, it's <strong>stoicism.</strong></p>
-                <p> I myself, have recently discovered it but do not know too much about it myself besides it's an excellent tool for coping with a lot in life and improving in many areas. If you are unware of the philosophy of stoicism, look it up and look up Marcus Aurelius and Seneca The Younger, these are some ancient greek philosophers who practiced it. That'll be all for now.</p>
+                <p>As mentioned in the previous page, updates will be coming soon. The first will be on allowing people to reply back to comments which should be soon.</p>
+                <p>Last week I mentioned about <strong>Stoicism</strong> and hopefully you guys checked it out. This week it's <strong>flow state</strong></p>
+                <p>This is something that some of you will know about. This is a psychological state where someone is fully emersed in the activity in which they are taking part in. In other words you're in the zone. Ever experienced this before when you're playing sport or doing work. That feeling where time feels different the only thing that matters is the task. <strong>That is flow state</strong>. Go check it out and tell me what you think via twitter (@Brotherhood0019)</p>
            <br>
 
                 <p><strong>Some new features included this week are:</strong></p>
@@ -28,6 +29,6 @@
 <br>
     <br>
     <br>
-    @include('partials.footer')
+    @include('partials.Footer')
 
 @endsection
