@@ -2,7 +2,6 @@
 .nav-link{
     padding: 100px;
 }
-
 </style>
     <div class="sidebar" data-color="orange">
 

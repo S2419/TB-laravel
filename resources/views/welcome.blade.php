@@ -106,7 +106,7 @@
                 <br>
 
                     <div class="intro">
-                        <p>The Self Improvement forum for men of all ages.</p>
+                        <p>The Self Improvement forum for men.</p>
                     </div>
 
                 <br>
