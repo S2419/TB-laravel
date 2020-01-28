@@ -81,7 +81,6 @@
 
 <body class="now-ui">
 <div id="main">
-
     <div class="wrapper">
         <div id="main">
             <nav class="navbar navbar-expand-lg bg-dark">

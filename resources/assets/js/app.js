@@ -20,7 +20,6 @@ require('bootstrap-sass');
 window.Pusher = require('pusher-js');
 
 
-
 import Echo from "laravel-echo";
 
 window.Echo = new Echo({
