@@ -1,6 +1,18 @@
 @extends('layouts.main')
+
+<style>
+
+    .adminpost{
+        position: center;
+        top:10px;
+
+    }
+</style>
+
 @section('content')
     @include('partials.Sidebar')
+
+    @if (Auth::guest())
     <div id="design" class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -9,27 +21,97 @@
                 </div>
                 <br>
             </div>
-
-            <div class="information">
-                <h2><Strong>Pride</Strong></h2>
-                <p>This weeks topic was suggested to me by a very good friend of mine that i value highly. One thing that we men have a big issue on is <strong>Pride</strong>. This is a common theme amongst men in being overly prideful in not sharing how they feel when faced with issues. It usually stems from the idea that we need to be 'men' and hold our feelings in and therefore sharing that we are depressed is seen as a vulnerability. In essence, we would rather be prideful and suffer than actually share our true feelings.<p>
-                <p> In my experience, i myself have found myself on countless occasions not wanting to share how im feeling and the struggles im facing purely because of my pride. Because i did not want to be seen as weak, im still learning to not be prideful and many of us need to do stop getting in our own way. When in actuality true strength lies when we finally accept to be <strong>vulnerable</strong> and put our pride away. We need to learn to appreciate the help that is around us and to go to those around us when we are in need. Lets stop suffering in silence.</p>
-                <p>So how about we challenge this. Lets challenge this narrative and put our pride to the side, put our egos aside and for once let ourselves be vulnerable</p>
-                <p> If you want to share your thoughts and opinions, tell me what you think via twitter (@Brotherhood0019)</p>
-           <br>
-                <p><strong>Some new features included this week are:</strong></p>
-                <p>Follow button which allows you to follow users you like,</p>
-                <p>Search function on posts and users</p>
-                <p>Private messaging (still needs fixing)</p>
-                <p>Notified when you get a new follower</p>
-                <p></p>
-            <strong> The Founder </strong>
         </div>
+
+        <div class="posts">
+            @foreach($adminposts as $adminpost)
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="title">
+                            <a href="{{ route('adminpost.show' , $adminpost->id) }}" class="btn btn-primary btn-neutral"> {{ $adminpost->title }}</a>
+                        </h1>
+                    </div>
+
+                    <div class="card-body">
+                        <h3>{{ $adminpost->content }}</h3>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="{{ route('user.show', $adminpost->user_id) }}"><p class="text-black">Posted by {{ $adminpost->user->name }} {{ $adminpost->created_at->diffForHumans()}} </p></a>
+                    </div>
+
+                </div>
+
+            @endforeach
+        </div>
+
     </div>
-    </div>
-<br>
-    <br>
-    <br>
+
     @include('partials.Footer')
+
+    @else
+
+        <div id="design" class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h1><strong>Whats new this week?</strong></h1></div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            @can('isSuperAdmin', 'isAdmin', 'isAuthor')
+            <div class="adminpost">
+                <form action="{{ route('adminpost') }}" method="post">
+                    <input name="title" class="form-control" id="title" placeholder="Title">
+                    <textarea name="content" class="form-control" id="content" placeholder="Start typing"></textarea>
+                    <input name="submit_btn"  class='"btn btn-primary btn-round"' type="submit" id="Post_btn" value="Submit">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </form>
+            </div>
+                @endcan
+
+            <div class="posts">
+                @foreach($adminposts as $adminpost)
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 class="title">
+                                <a href="{{ route('adminpost.show' , $adminpost->id) }}" class="btn btn-primary btn-neutral"> {{ $adminpost->title }}</a>
+                            </h1>
+                        </div>
+
+                        <div class="card-body">
+                            <h3>{{ $adminpost->content }}</h3>
+                        </div>
+
+                        <div class="card-footer">
+                            <a href="{{ route('user.show', $adminpost->user_id) }}"><p class="text-black">Posted by {{ $adminpost->user->name }} {{ $adminpost->created_at->diffForHumans()}} </p></a>
+                        </div>
+
+                        @if($adminpost->user_id == Auth::user()->id)
+                            <div class="Buttons">
+                                <a href="{{ route('adminpostedit', $adminpost->id) }}" class="btn btn-primary btn-neutral"> Edit </a>
+
+                                <div class="form-group">
+                                    {!! Form::open([
+
+                                        'method' => 'Delete',
+                                        'route' => ['adminpost.destroy', $adminpost->id]
+                                            ]) !!}
+                                    {!! Form::submit('Delete this?', ['class' => 'btn btn-danger btn-round']) !!}
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+
+                @endforeach
+            </div>
+
+        </div>
+
+        @include('partials.Footer')
+
+    @endif
 
 @endsection

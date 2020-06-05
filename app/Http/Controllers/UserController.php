@@ -64,11 +64,6 @@ class UserController extends Controller
         return redirect()->route('Account');
     }
 
-    public function Story()
-    {
-        return view('Story');
-    }
-
     public function Account()
     {
         $posts = Post::where('user_id', '=', auth::user()->id)->latest('created_at')->get();
@@ -127,11 +122,6 @@ class UserController extends Controller
         return redirect()->back()->with('Password has been changed');
     }
 
-    public function Weeklyupdates()
-    {
-        return view ('Weeklyupdates');
-    }
-
     public function deleteuser()
     {
         return view ('Deleteaccount', ['user' => Auth::user()]);
@@ -146,6 +136,8 @@ class UserController extends Controller
 
         return redirect()->route('login');
     }
+
+
 
 
 

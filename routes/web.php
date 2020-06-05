@@ -20,12 +20,26 @@ Auth::routes();
 
 //Every route in this group is now protected by auth middleware. so no need to set it individually like on line 48
 //Route::group(['middleware' =>  ['auth', 'web']], function () {
+Route::get('/home', 'HomeController@Home')->name('home');
+
+Route::get('Story', [
+    'uses' => 'HomeController@Story',
+    'as' => 'Story',
+]);
+
+Route::get('adminpost/{id}', [
+    'uses' => 'HomeController@adminshow',
+    'as' => 'adminpost.show',
+]);
+
+Route::get('Weeklyupdates', [
+    'uses' => 'HomeController@Weeklyupdates',
+    'as' => 'Weeklyupdates',
+]);
+
+
+
 Route::group(['middleware' => ['auth']], function() {
-
-  
-   Route::get('/home', 'HomeController@Home')->name('home');
-
-
 
     Route::post('post', [
         'uses' => 'PostController@Createpost',
@@ -47,7 +61,6 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'post.destroy'
     ]);
 
-
     Route::post('/Account', [
         'uses' => 'UserController@update_profilepic',
         'as' => 'Account',
@@ -56,11 +69,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/Account', [
         'uses' => 'UserController@Account',
         'as' => 'Account',
-    ]);
-
-    Route::get('Story', [
-        'uses' => 'UserController@Story',
-        'as' => 'Story',
     ]);
 
 
@@ -107,7 +115,6 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'markAsRead',
     ]);
 
-
     Route::get('editcomment/{id}', [
         'uses' => 'CommentController@editcomment',
         'as' => 'EditComment'
@@ -138,7 +145,6 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'Saveaccount'
     ]);
 
-
     Route::get('Changepassword',[
         'uses' => 'UserController@showChangePasswordForm',
         'as' => 'Changepassword'
@@ -147,11 +153,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('changePassword', [
         'uses' => 'UserController@changePassword',
         'as' => 'changePassword',
-    ]);
-
-    Route::get('Weeklyupdates', [
-        'uses' => 'UserController@Weeklyupdates',
-        'as' => 'Weeklyupdates',
     ]);
 
     Route::get('Deleteaccount',[
@@ -197,7 +198,6 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'privateMessages.store',
     ]);
 
-
     Route::get('Users',[
         'uses' => 'SearchController@getUsersearch',
         'as' => 'getUsersearch'
@@ -213,22 +213,44 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'getPostsearch'
     ]);
 
-
     Route::get('Postsearch', [
         'uses' => 'SearchController@getPostsearch',
         'as' => 'Postsearch',
     ]);
-
 
     Route::post('Postsearch', [
         'uses' => 'SearchController@Postsearch',
         'as' => 'Postsearch',
     ]);
 
-
     Route::get('followlist',[
         'uses' => 'ProfilesController@followlist',
         'as' => 'Followlist',
+    ]);
+
+    Route::post('adminpost', [
+        'uses' => 'AdminController@CreateWeeklypost',
+        'as' => 'adminpost'
+    ]);
+
+    Route::get('adminpostedit/{id}', [
+        'uses' => 'AdminController@editpost',
+        'as' => 'adminpostedit'
+    ]);
+
+    Route::patch('updatepost/{id}', [
+        'uses' => 'AdminController@updateadminpost',
+        'as' => 'post.update'
+    ]);
+
+    Route::delete('admindestroypost/{id}', [
+        'uses' => 'AdminController@destroypost',
+        'as' => 'adminpost.destroy'
+    ]);
+
+    Route::get('Adminuser',[
+        'uses' => 'AdminController@Admins',
+        'as' => 'Adminuser'
     ]);
 
 

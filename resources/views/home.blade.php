@@ -40,7 +40,30 @@
                 </form>
             </div>
 
+            @if (Auth::guest())
 
+                <div class="posts">
+                    @foreach($posts as $post)
+                        <div class="card">
+                            <div class="card-header">
+                                <h1 class="title">
+                                    <a href="{{ route('post.show' , $post->id) }}" class="btn btn-primary btn-neutral"> {{ $post->title }}</a>
+                                </h1>
+                            </div>
+
+                            <div class="card-body">
+                                <h3>{{ $post->content }}</h3>
+                            </div>
+
+                            <div class="card-footer">
+                                <a href="{{ route('user.show', $post->user_id) }}"><p class="text-black">Posted by {{ $post->user->name }} {{ $post->created_at->diffForHumans()}} </p></a>
+                            </div>
+
+                        </div>
+                            @endforeach
+                </div>
+
+            @else
 
             <div class="posts">
             @foreach($posts as $post)
@@ -82,7 +105,7 @@
 
             @endforeach
             </div>
-
+@endif
 
 
         </div>

@@ -2,12 +2,9 @@
 
 namespace App;
 
-use Illuminate\Notifications\HasDatabaseNotifications;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\DatabaseNotification;
-use Laravel\Scout\Searchable;
-class User extends Authenticatable
+use Illuminate\Database\Eloquent\Model;
+
+class Admin extends Model
 {
     use Notifiable;
     use Searchable;
@@ -19,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profilepic', 'user_role'
+        'name', 'email', 'password', 'profilepic',
     ];
 
     /**
@@ -101,7 +98,7 @@ class User extends Authenticatable
 
     public function searchableAs()
     {
-        return 'users_index';
+        return 'admins_index';
     }
 
     public function toSearchableArray()
@@ -109,11 +106,6 @@ class User extends Authenticatable
         $array = $this->toArray();
 
         return array('id' => $array['id'], 'name' => $array['name']);
-    }
-
-    public function adminpost()
-    {
-        return $this-> hasMany('App\AdminPost');
     }
 
 

@@ -85,6 +85,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .Browse{
+                text-align: center;
+            }
         </style>
     </head>
     @section('content')
@@ -105,24 +109,39 @@
 
                 <br>
 
-                    <div class="intro">
-                        <p>The Self Improvement forum for men.</p>
-                    </div>
+                <div class="Browse">
+
+                <div style="padding:30px;">
+                    <a class="active" href="{{ route('home') }}">
+                        <i class="now-ui-icons business_globe"></i>
+                        <p>Home</p>
+                    </a>
+                </div>
+
+                <div style="padding:30px;">
+                    <a class="active" href="{{ route('Weeklyupdates') }}">
+                        <i class="now-ui-icons travel_info"></i>
+                        <p>What's new?</p>
+                    </a>
+                </div>
+
+
+                <div style="padding:30px;">
+                    <a class="active" href="{{ route('Story') }}">
+                        <i class="now-ui-icons business_bulb-63"></i>
+                        <p>Purpose of this + Rules?</p>
+                    </a>
+                </div>
+                </div>
+
+
 
                 <br>
 
 
                 <div class="points">
 
-                    <p>Mental Health</p>
-
-                    <p>Personal Growth</p>
-
-                    <p>Career and educational help</p>
-
-                    <p>Advice and support from all ages</p>
-
-                    <p>Become part of a collective, <strong>become part of the Brotherhood</strong></p>
+                    <p>Be part of a collective, <strong>become part of the Brotherhood</strong></p>
                 </div>
 
                 <div class="logo">

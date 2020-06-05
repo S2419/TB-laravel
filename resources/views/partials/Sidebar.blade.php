@@ -7,6 +7,31 @@
 
                 <!-- sidebar menu start-->
 
+        @if (Auth::guest())
+
+
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+            <li style="padding:30px;">
+                <a class="active" href="{{ route('Story') }}">
+                    <i class="now-ui-icons business_bulb-63"></i>
+                    <p>Purpose of this + Rules?</p>
+                </a>
+            </li>
+
+
+            <li style="padding:30px;">
+                <a class="active" href="{{ route('Weeklyupdates') }}">
+                    <i class="now-ui-icons travel_info"></i>
+                    <p>What's new?</p>
+                </a>
+            </li>
+
+                </ul>
+            </div>
+        @else
+
+
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
                      <li>
@@ -44,12 +69,23 @@
                         </a>
                 </li>
 
+                @can('isSuperAdmin')
+                    <li style="padding:30px;">
+                        <a class="active" href="{{ route('Adminuser') }}">
+                            <i class="now-ui-icons business_badge"></i>
+                            <p>Admins</p>
+                        </a>
+                    </li>
+                    @endcan
+
+
 
                 </ul>
 
 
                 <!-- sidebar menu end-->
             </div>
+            @endif
     </div>
 
 <!--sidebar end-->
