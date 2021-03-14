@@ -65,6 +65,7 @@
 
             .logo{
                 text-align: center;
+                mix-blend-mode: multiply;
             }
             
             
@@ -89,10 +90,15 @@
             .Browse{
                 text-align: center;
             }
+
+
+
+
+
         </style>
     </head>
     @section('content')
-    <body class="background" style="background-color: white;" >
+    <body class="background" style="background-image: url('assets/img/hands.jpg'); background-size: 1900px;"  >
         <div class="flex-center position-ref">
             @if (Route::has('login'))
                 <div class="top-right links text-white">
@@ -102,9 +108,10 @@
                 </div>
             @endif
 
-            <div class="Page">
-                <div class="title m-b-md text-black">
-                 Welcome to The Brotherhood
+
+                <div class="Page">
+                <div class="title m-b-md text-white">
+                TheBrotherhood
                 </div>
 
                 <br>
@@ -112,14 +119,14 @@
                 <div class="Browse">
 
                 <div style="padding:30px;">
-                    <a class="active" href="{{ route('home') }}">
+                    <a class="active text-white" href="{{ route('home') }}">
                         <i class="now-ui-icons business_globe"></i>
                         <p>Home</p>
                     </a>
                 </div>
 
                 <div style="padding:30px;">
-                    <a class="active" href="{{ route('Weeklyupdates') }}">
+                    <a class="active text-white" href="{{ route('Weeklyupdates') }}">
                         <i class="now-ui-icons travel_info"></i>
                         <p>What's new?</p>
                     </a>
@@ -127,7 +134,7 @@
 
 
                 <div style="padding:30px;">
-                    <a class="active" href="{{ route('Story') }}">
+                    <a class="active text-white" href="{{ route('Story') }}">
                         <i class="now-ui-icons business_bulb-63"></i>
                         <p>Purpose of this + Rules?</p>
                     </a>
@@ -139,18 +146,13 @@
                 <br>
 
 
-                <div class="points">
-
-                    <p>Be part of a collective, <strong>become part of the Brotherhood</strong></p>
-                </div>
-
                 <div class="logo">
                 <img src="{{ URL::to('/assets/img/Handlogo.JPG') }}" style= "width:200px; height:170px; ">
                 </div>
 
 
 
-                <div class="disclaimer">
+                <div class="disclaimer text-white">
                     <strong>*Disclaimer*</strong>
                     <strong>Advice given on this forum is not from officials or professionals, please take caution and use advice to your discretion. TheBrotherhood is not responsible and only advises from experience to help you. Enjoy.</strong>
                 </div>

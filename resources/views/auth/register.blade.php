@@ -1,8 +1,17 @@
 @extends('layouts.main')
 
+<style>
+    .logo{
+        text-align: center;
+        margin-top: 200px;
+        margin-left: 430px;
+
+    }
+</style>
+
 @section('content')
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+        <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
@@ -69,6 +78,11 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="logo">
+                        <img src="{{ URL::to('/assets/img/Handlogo.JPG') }}" style= "width:200px; height:170px; ">
+                    </div>
+
                 </div>
             </div>
         </div>

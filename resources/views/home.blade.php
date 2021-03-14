@@ -12,6 +12,10 @@
     .post{
         position:center;
     }
+
+    .Buttons{
+        display: flex;
+    }
 </style>
 @section('content')
     @include('partials.Sidebar')
