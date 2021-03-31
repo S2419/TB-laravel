@@ -203,7 +203,12 @@ Route::group(['middleware' => ['auth']], function() {
         'as' => 'getUsersearch'
     ]);
 
-    Route::post('Usersearch',[
+    Route::get('Usersearch',[
+        'uses' => 'SearchController@getUsersearch',
+        'as' => 'Usersearch',
+    ]);
+
+    Route::post('Usersearch', [
         'uses' => 'SearchController@Usersearch',
         'as' => 'Usersearch',
     ]);

@@ -20,17 +20,16 @@ class SearchController extends Controller
         $query = $request->input('query');
 
         $users = User::search($query)->paginate(3);
-
+        dd($users);
         return view('Usersearch')->with('users', $users);
     }
 
     public function getUsersearch(Request $request)
     {
-
-
         $query = $request->input('query');
 
         $users = User::search($query)->paginate(3);
+        //dd($users);
         return view('Usersearch')->with('users', $users);
     }
 
@@ -55,6 +54,7 @@ class SearchController extends Controller
 
 
         $posts = Post::search($query)->paginate(3);
+        //dd($posts);
         return view('Postsearch')->with('posts', $posts);
 
     }

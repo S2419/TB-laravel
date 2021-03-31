@@ -2,8 +2,9 @@
 .nav-link{
     padding: 100px;
 }
+    .sidebar{}
 </style>
-    <div class="sidebar" data-color="orange">
+    <div class="sidebar" data-color="blue">
 
                 <!-- sidebar menu start-->
 

@@ -51,6 +51,9 @@
             .title {
                 font-size: 70px;
                 text-align: center;
+                text-decoration: underline;
+                letter-spacing: 15px;
+                font-family: Arial, sans-serif;
             }
 
             .points{
@@ -110,7 +113,7 @@
 
 
                 <div class="Page">
-                <div class="title m-b-md text-white">
+                <div class="title m-b-md text-black">
                 TheBrotherhood
                 </div>
 
@@ -119,24 +122,24 @@
                 <div class="Browse">
 
                 <div style="padding:30px;">
-                    <a class="active text-white" href="{{ route('home') }}">
+                    <a href="{{ route('home') }}" class="btn btn-neutral btn-round bt">
                         <i class="now-ui-icons business_globe"></i>
-                        <p>Home</p>
+                        Home
                     </a>
                 </div>
 
                 <div style="padding:30px;">
-                    <a class="active text-white" href="{{ route('Weeklyupdates') }}">
+                    <a href="{{ route('Weeklyupdates') }}" class="btn btn-neutral btn-round">
                         <i class="now-ui-icons travel_info"></i>
-                        <p>What's new?</p>
+                        What's new?
                     </a>
                 </div>
 
 
                 <div style="padding:30px;">
-                    <a class="active text-white" href="{{ route('Story') }}">
+                    <a href="{{ route('Story') }}" class="btn btn-neutral btn-round btn">
                         <i class="now-ui-icons business_bulb-63"></i>
-                        <p>Purpose of this + Rules?</p>
+                        Guide
                     </a>
                 </div>
                 </div>
@@ -147,7 +150,7 @@
 
 
                 <div class="logo">
-                <img src="{{ URL::to('/assets/img/Handlogo.JPG') }}" style= "width:200px; height:170px; ">
+                <img src="{{ URL::to('/assets/img/Handlogo.JPG') }}" style= "width:200px; height:160px; ">
                 </div>
 
 

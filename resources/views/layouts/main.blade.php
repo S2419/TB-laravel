@@ -39,6 +39,10 @@
     margin-right:50px;
 }
 
+.navbar{
+    background-color: #b21f2d;
+}
+
 .search{
   margin-right: 510px;
 }
@@ -83,7 +87,7 @@
 <div id="main">
     <div class="wrapper">
         <div id="main">
-            <nav class="navbar navbar-expand-lg bg-dark">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
 
                     <!-- Collapsed Hamburger -->
