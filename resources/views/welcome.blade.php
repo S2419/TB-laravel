@@ -54,6 +54,11 @@
                 text-decoration: underline;
                 letter-spacing: 15px;
                 font-family: Arial, sans-serif;
+
+            }
+
+            .title:hover{
+                text-decoration-color: white;
             }
 
             .points{
@@ -76,7 +81,7 @@
                 text-align: center;
             }
 
-            .links > a {
+            .links:hover > a {
                 color: white;
                 padding: 0 25px;
                 font-size: 12px;
@@ -91,7 +96,7 @@
             }
 
             .Browse{
-                text-align: center;
+
             }
 
 
