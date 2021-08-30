@@ -1,4 +1,5 @@
-<style>
+<style scoped>
+
 
 </style>
 <template>
@@ -13,20 +14,20 @@
                     <span class="small font-italic" >{{message.user.name}}</span>
                 </v-flex>
 
-                <div v-if="message.message" class="text-message-container">
-                    <v-chip :color="(user.id===message.user_id)?'green':'red'" text-color="black">
+                <div v-if="message.message" class="text-message">
+                    <v-chips :color="(user.id===message.user_id)?'green':'red'" text-color="black">
                         {{message.message}}
 
-                    </v-chip>
+                    </v-chips>
                 </div>
 
             </div>
-        </v-list>
+        </v-list>y
     </div>
 </template>
-
 <script>
     export default {
+
         props: ['user','allMessages'],
 
     }

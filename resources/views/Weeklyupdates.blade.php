@@ -7,6 +7,16 @@
         top:10px;
 
     }
+    .card{
+        outline-color: #a71d2a;
+        outline-style: solid;
+    }
+
+    .card:hover {
+        outline-color: #800080;
+        box-shadow: 12px 10px 16px 0 rgba(0,2,0,2.2);
+        transform: translateY(-0.253em);
+    }
 </style>
 
 @section('content')

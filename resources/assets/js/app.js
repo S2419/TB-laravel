@@ -9,6 +9,7 @@ require('./bootstrap');
 
 //import VueResource from "vue-resource"
 
+
 window.Vue = require('vue');
 
 window._ = require('lodash');
@@ -18,7 +19,6 @@ window.$ = window.jQuery = require ('jquery');
 require('bootstrap-sass');
 
 window.Pusher = require('pusher-js');
-
 
 import Echo from "laravel-echo";
 
@@ -116,7 +116,7 @@ function makeNotificationText(notification) {
     } else if (notification.type === NOTIFICATION_TYPES.follow) {
         const name = notification.data.data.follower_name;
         text += '<strong> New </strong> follower'.fontcolor('black');
-    } else if (notification.type === NOTIFICATION_TYPES.comment) {
+    } else if (notification.type === NOTIFICATION_TYPES.message) {
         const name = notification.data.name;
         text += '<strong>' + name + '</strong> sent you a message'.fontcolor('black')
     }

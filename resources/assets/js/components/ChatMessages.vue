@@ -1,6 +1,13 @@
 <style scoped>
-    .card-header {
-        float: left;
+
+    .card-header{
+        outline-color: #a71d2a;
+        outline-style: solid;
+    }
+
+    .card-header:hover {
+        outline-color: #800080;
+        box-shadow: 12px 10px 16px 0 rgba(0,2,0,2.2);
     }
     .messages{
         float:left;
@@ -8,6 +15,14 @@
 
     .chat {
         float: right;
+    }
+
+    #privateMessageBox{
+
+    }
+
+    .messages{
+
     }
 
 </style>
@@ -21,7 +36,7 @@
              @click="activeFollowing=following.id"
         >
             <ul class="card-header text-black" v-if="following.name">
-                <li>{{following.name}}</li>
+                {{following.name}}
             </ul>
         </div>
         <!-- v-if="message.message" class="text-message-container">
@@ -138,10 +153,7 @@
 
 
             fetchMessages() {
-                if (!this.activeFollowing) {
-                    return alert('Select user');
-                }
-                axios.get('/privateMessages/' + this.activeFollowing).then(response => {
+                 axios.get('/privateMessages/' + this.activeFollowing).then(response => {
                     this.allMessages = response.data;
                     setTimeout(this.scrollToEnd, 100);
                     console.log(this.allMessages)

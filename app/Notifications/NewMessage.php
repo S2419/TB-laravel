@@ -6,19 +6,20 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-
+use App\message;
 class NewMessage extends Notification
 {
     use Queueable;
+    protected $message;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Message $message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -29,7 +30,20 @@ class NewMessage extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database', 'broadcast'];
+    }
+
+    public function toDatabase($notifiable)
+    {
+        return [
+            'id' => $this->id,
+            'read_at' => null,
+            'data' => [
+                'message' => $this->message->message,
+                'user_id' => $this->message->user_id,
+            ],
+
+        ];
     }
 
     /**
@@ -40,10 +54,7 @@ class NewMessage extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+
     }
 
     /**
@@ -55,7 +66,14 @@ class NewMessage extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'id' => $this->id,
+            'read_at' => null,
+            'data' => [
+                'message' => $this->message->message,
+                'user_id' => $this->message->user_id,
+            ],
+
         ];
+
     }
 }

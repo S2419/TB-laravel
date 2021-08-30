@@ -8,9 +8,14 @@ use App\Message;
 use Illuminate\Support\Facades\Auth;
 use App\Events\PrivateMessageSent;
 use App\Notifications\NewMessage;
+use Illuminate\Notifications\Notifiable;
+
 
 class MessagesController extends Controller
 {
+
+    use Notifiable;
+
     public function _construct()
     {
         $this->middleware('auth');
