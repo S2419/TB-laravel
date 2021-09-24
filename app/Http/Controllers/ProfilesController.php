@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\User;
 use App\Models\Post;
+=======
+use App\User;
+use App\Post;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 use Illuminate\Support\Facades\Auth;
 use App\Notifications\NewFollower;
 
@@ -53,3 +58,8 @@ class ProfilesController extends Controller
 
 
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb

@@ -21,7 +21,11 @@
                 <h3 class="text-white panel-heading">User Search</h3>
 
                 <div class="Post-search">
+<<<<<<< HEAD
                     <a href="{{ route('getPostsearch') }}">Post Search</a>
+=======
+                <a href="{{ route('getPostsearch') }}">Post Search</a>
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
                 </div>
 
                 <div class="main-panel">

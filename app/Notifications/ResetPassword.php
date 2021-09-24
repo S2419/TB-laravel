@@ -3,9 +3,15 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+<<<<<<< HEAD
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+=======
+use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 class ResetPassword extends Notification
 {
@@ -16,9 +22,17 @@ class ResetPassword extends Notification
      *
      * @return void
      */
+<<<<<<< HEAD
     public function __construct()
     {
         //
+=======
+    public $token;
+
+    public function __construct($token)
+    {
+        $this->token = $token;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     }
 
     /**
@@ -41,9 +55,15 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+<<<<<<< HEAD
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
+=======
+            ->line('You are receiving this email because we received a password reset request for your account!')
+            ->action('Reset Password',  url('password/reset', $this->token))
+            ->line('If you did not request a password reset, no further action is required.');
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     }
 
     /**

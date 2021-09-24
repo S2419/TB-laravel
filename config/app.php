@@ -10,7 +10,10 @@ return [
     | This value is the name of your application. This value is used when the
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
+<<<<<<< HEAD
     |
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     */
 
     'name' => env('APP_NAME', 'Laravel'),
@@ -22,7 +25,11 @@ return [
     |
     | This value determines the "environment" your application is currently
     | running in. This may determine how you prefer to configure various
+<<<<<<< HEAD
     | services the application utilizes. Set this in your ".env" file.
+=======
+    | services your application utilizes. Set this in your ".env" file.
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     |
     */
 
@@ -39,7 +46,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'debug' => (bool) env('APP_DEBUG', false),
+=======
+    'debug' => env('APP_DEBUG', false),
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -54,8 +65,11 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+<<<<<<< HEAD
     'asset_url' => env('ASSET_URL', null),
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -97,6 +111,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
     | Faker Locale
     |--------------------------------------------------------------------------
     |
@@ -122,6 +137,37 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
+=======
+    | Encryption Key
+    |--------------------------------------------------------------------------
+    |
+    | This key is used by the Illuminate encrypter service and should be set
+    | to a random, 32 character string, otherwise these encrypted strings
+    | will not be safe. Please do this before deploying an application!
+    |
+    */
+
+    'key' => env('APP_KEY'),
+
+    'cipher' => 'AES-256-CBC',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Logging Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the log settings for your application. Out of
+    | the box, Laravel uses the Monolog PHP logging library. This gives
+    | you a variety of powerful log handlers / formatters to utilize.
+    |
+    | Available Settings: "single", "daily", "syslog", "errorlog"
+    |
+    */
+
+    'log' => env('APP_LOG', 'single'),
+
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -162,12 +208,19 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+<<<<<<< HEAD
         Intervention\Image\ImageServiceProvider::class,
 
 
         /*
          * Package Service Providers...
          */
+=======
+        /*
+         * Package Service Providers...
+         */
+        Laravel\Tinker\TinkerServiceProvider::class,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
         /*
          * Application Service Providers...
@@ -178,6 +231,17 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+<<<<<<< HEAD
+=======
+
+        Collective\Html\HtmlServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
+
+        Laravel\Scout\ScoutServiceProvider::class,
+
+        Overtrue\LaravelFollow\FollowServiceProvider::class
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     ],
 
     /*
@@ -194,7 +258,10 @@ return [
     'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,
+<<<<<<< HEAD
         'Arr' => Illuminate\Support\Arr::class,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
@@ -204,35 +271,56 @@ return [
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
+<<<<<<< HEAD
         'Date' => Illuminate\Support\Facades\Date::class,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+<<<<<<< HEAD
         'Http' => Illuminate\Support\Facades\Http::class,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
+<<<<<<< HEAD
         'RateLimiter' => Illuminate\Support\Facades\RateLimiter::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         // 'Redis' => Illuminate\Support\Facades\Redis::class,
+=======
+        'Redirect' => Illuminate\Support\Facades\Redirect::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         'Request' => Illuminate\Support\Facades\Request::class,
         'Response' => Illuminate\Support\Facades\Response::class,
         'Route' => Illuminate\Support\Facades\Route::class,
         'Schema' => Illuminate\Support\Facades\Schema::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
+<<<<<<< HEAD
         'Str' => Illuminate\Support\Str::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
 
+=======
+        'URL' => Illuminate\Support\Facades\URL::class,
+        'Validator' => Illuminate\Support\Facades\Validator::class,
+        'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Pusher' => Pusher\Pusher::class,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     ],
 
 ];

@@ -1,13 +1,23 @@
 @extends('layouts.main')
 
+<<<<<<< HEAD
 <style>
+=======
+    <style>
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     .User-search{
         float:right;
     }
 
+<<<<<<< HEAD
     .search-results{
         margin-top: 80px;
     }
+=======
+        .search-results{
+            margin-top: 80px;
+        }
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     .card{
         outline-color: #a71d2a;
@@ -20,7 +30,11 @@
         transform: translateY(-0.253em);
     }
 
+<<<<<<< HEAD
 </style>
+=======
+    </style>
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 @section('title')
     Post Search

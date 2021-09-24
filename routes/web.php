@@ -1,7 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');*/
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 Auth::routes();
 
 
@@ -45,6 +54,11 @@ Route::get('Weeklyupdates', [
     'as' => 'Weeklyupdates',
 ]);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 Route::group(['middleware' => ['auth']], function() {
 
     Route::post('post', [
@@ -267,6 +281,9 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 
+<<<<<<< HEAD
 
 
 require __DIR__.'/auth.php';
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb

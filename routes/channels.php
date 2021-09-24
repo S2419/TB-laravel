@@ -1,7 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Broadcast;
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -13,13 +16,24 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
+<<<<<<< HEAD
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
 
+=======
+Broadcast::channel('App.User.{id}', function ($user, $id) {
+    return (int) $user->id === (int) $id;
+});
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 Broadcast::channel('privateChat.{userId}', function ($user, $userId){
     //return $user->id === $userId;
     return $user->id === User::findOrNew($userId)->user_id;
     //return Auth::check();
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb

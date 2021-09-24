@@ -6,9 +6,16 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 
+<<<<<<< HEAD
 
 class SearchController extends Controller
 {
+=======
+class SearchController extends Controller
+{
+
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     public function Usersearch(Request $request)
     {
 
@@ -57,4 +64,11 @@ class SearchController extends Controller
         return view('Postsearch')->with('posts', $posts);
 
     }
+<<<<<<< HEAD
 }
+=======
+
+
+}
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb

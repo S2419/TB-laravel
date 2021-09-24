@@ -4,16 +4,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
     | Default Queue Connection Name
+=======
+    | Default Queue Driver
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     |--------------------------------------------------------------------------
     |
     | Laravel's queue API supports an assortment of back-ends via a single
     | API, giving you convenient access to each back-end using the same
+<<<<<<< HEAD
     | syntax for every one. Here you may define a default connection.
     |
     */
 
     'default' => env('QUEUE_CONNECTION', 'sync'),
+=======
+    | syntax for each one. Here you may set the default queue driver.
+    |
+    | Supported: "sync", "database", "beanstalkd", "sqs", "redis", "null"
+    |
+    */
+
+    'default' => env('QUEUE_DRIVER', 'sync'),
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -24,8 +38,11 @@ return [
     | is used by your application. A default configuration has been added
     | for each back-end shipped with Laravel. You are free to add more.
     |
+<<<<<<< HEAD
     | Drivers: "sync", "database", "beanstalkd", "sqs", "redis", "null"
     |
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     */
 
     'connections' => [
@@ -39,7 +56,10 @@ return [
             'table' => 'jobs',
             'queue' => 'default',
             'retry_after' => 90,
+<<<<<<< HEAD
             'after_commit' => false,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
         'beanstalkd' => [
@@ -47,12 +67,16 @@ return [
             'host' => 'localhost',
             'queue' => 'default',
             'retry_after' => 90,
+<<<<<<< HEAD
             'block_for' => 0,
             'after_commit' => false,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
         'sqs' => [
             'driver' => 'sqs',
+<<<<<<< HEAD
             'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
@@ -60,15 +84,27 @@ return [
             'suffix' => env('SQS_SUFFIX'),
             'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
             'after_commit' => false,
+=======
+            'key' => 'your-public-key',
+            'secret' => 'your-secret-key',
+            'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
+            'queue' => 'your-queue-name',
+            'region' => 'us-east-1',
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
+<<<<<<< HEAD
             'queue' => env('REDIS_QUEUE', 'default'),
             'retry_after' => 90,
             'block_for' => null,
             'after_commit' => false,
+=======
+            'queue' => 'default',
+            'retry_after' => 90,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
     ],
@@ -85,7 +121,10 @@ return [
     */
 
     'failed' => [
+<<<<<<< HEAD
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
     ],

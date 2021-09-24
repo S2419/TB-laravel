@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Artisan;
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +19,8 @@ use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
+<<<<<<< HEAD
 })->purpose('Display an inspiring quote');
+=======
+})->describe('Display an inspiring quote');
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb

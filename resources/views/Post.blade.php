@@ -2,11 +2,19 @@
 
 <style>
     .Buttons{
+<<<<<<< HEAD
         display:inline-block;
     }
     .display-comment{
         margin-left: 40px;
     }
+=======
+      display:inline-block;
+    }
+        .display-comment{
+         margin-left: 40px;
+     }
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 
 </style>

@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\Models\AdminPost;
 use App\Models\Post;
 use App\Models\Comment;
+=======
+use App\AdminPost;
+use Illuminate\Http\Request;
+use App\Post;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 class HomeController extends Controller
 {
@@ -15,7 +21,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function home()
+=======
+   public function home()
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     {
         //$posts = Post::all();
         $posts = Post::all()->sortByDesc('created_at');
@@ -50,4 +60,10 @@ class HomeController extends Controller
         return view('Post')->with(['post' => $post, 'comments' => $comments]);
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 }

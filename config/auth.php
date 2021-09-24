@@ -31,7 +31,11 @@ return [
     | users are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
     |
+<<<<<<< HEAD
     | Supported: "session"
+=======
+    | Supported: "session", "token"
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     |
     */
 
@@ -67,7 +71,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+<<<<<<< HEAD
             'model' => App\Models\User::class,
+=======
+            'model' => App\User::class,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
         // 'users' => [
@@ -96,6 +104,7 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+<<<<<<< HEAD
             'throttle' => 60,
         ],
     ],
@@ -113,4 +122,9 @@ return [
 
     'password_timeout' => 10800,
 
+=======
+        ],
+    ],
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 ];

@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Support\Facades\Input;
 use App\Models\Comment;
 
+=======
+use App\Post;
+use Illuminate\Support\Facades\Auth;
+use Session;
+use Illuminate\Support\Facades\Input;
+use App\Comment;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 class PostController extends Controller
 {
     public function Createpost(Request $request)
@@ -87,4 +95,8 @@ class PostController extends Controller
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 }

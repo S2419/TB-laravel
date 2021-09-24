@@ -65,7 +65,11 @@
 
 
                     <div class="card-footer">
+<<<<<<< HEAD
                         <p class="text-black">Posted by {{ $post->user->name }} {{ $post->created_at->diffForHumans()}} </p>
+=======
+                      <p class="text-black">Posted by {{ $post->user->name }} {{ $post->created_at->diffForHumans()}} </p>
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
                     </div>
                     @if($post->user_id == Auth::user()->id)
                         <div class="Buttons">

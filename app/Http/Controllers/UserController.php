@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Intervention\Image\Facades\Image;
 
 
+=======
+use App\Post;
+use Illuminate\Support\Facades\Auth;
+use Image;
+use App\User;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 class UserController extends Controller
 {
@@ -145,4 +152,7 @@ class UserController extends Controller
 
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb

@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\Events\CommentsEvent;
 use App\Notification;
+=======
+use App\Events\CommentsEvent;
+use App\Notification;
+use Illuminate\Http\Request;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 use App\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
@@ -13,7 +19,10 @@ use App\Notifications\NewComment;
 use App\User;
 use Illuminate\Support\Facades\Input;
 use Session;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 class CommentController extends Controller
 {
     use Notifiable;
@@ -117,4 +126,8 @@ class CommentController extends Controller
         //$comment = Comment::all();
         return redirect()->route('home');
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 }

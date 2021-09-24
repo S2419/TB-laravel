@@ -1,7 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 return [
 
     /*
@@ -13,6 +16,11 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
+<<<<<<< HEAD
+=======
+    | Supported: "apc", "array", "database", "file", "memcached", "redis"
+    |
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
@@ -26,9 +34,12 @@ return [
     | well as their drivers. You may even define multiple stores for the
     | same cache driver to group types of items stored in your caches.
     |
+<<<<<<< HEAD
     | Supported drivers: "apc", "array", "database", "file",
     |         "memcached", "redis", "dynamodb", "octane", "null"
     |
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     */
 
     'stores' => [
@@ -39,14 +50,20 @@ return [
 
         'array' => [
             'driver' => 'array',
+<<<<<<< HEAD
             'serialize' => false,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
         'database' => [
             'driver' => 'database',
             'table' => 'cache',
             'connection' => null,
+<<<<<<< HEAD
             'lock_connection' => null,
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
         'file' => [
@@ -62,7 +79,11 @@ return [
                 env('MEMCACHED_PASSWORD'),
             ],
             'options' => [
+<<<<<<< HEAD
                 // Memcached::OPT_CONNECT_TIMEOUT => 2000,
+=======
+                // Memcached::OPT_CONNECT_TIMEOUT  => 2000,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
             ],
             'servers' => [
                 [
@@ -75,6 +96,7 @@ return [
 
         'redis' => [
             'driver' => 'redis',
+<<<<<<< HEAD
             'connection' => 'cache',
             'lock_connection' => 'default',
         ],
@@ -90,6 +112,9 @@ return [
 
         'octane' => [
             'driver' => 'octane',
+=======
+            'connection' => 'default',
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         ],
 
     ],
@@ -105,6 +130,10 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
+=======
+    'prefix' => 'laravel',
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
 ];

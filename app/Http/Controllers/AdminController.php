@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\AdminPost;
+=======
+use App\AdminPost;
+use Illuminate\Http\Request;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use App\User;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 class AdminController extends Controller
 {
     public function CreateWeeklypost(Request $request)
@@ -91,4 +99,8 @@ class AdminController extends Controller
         return view('AdminPost', compact('secret data'));
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 }

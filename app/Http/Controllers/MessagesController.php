@@ -3,15 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\User;
 use App\Models\Message;
+=======
+use App\User;
+use App\Message;
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 use Illuminate\Support\Facades\Auth;
 use App\Events\PrivateMessageSent;
 use App\Notifications\NewMessage;
 use Illuminate\Notifications\Notifiable;
 
+<<<<<<< HEAD
 class MessagesController extends Controller
 {
+=======
+
+class MessagesController extends Controller
+{
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     use Notifiable;
 
     public function _construct()
@@ -147,4 +159,8 @@ class MessagesController extends Controller
         return User::all();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 }

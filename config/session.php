@@ -1,7 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 return [
 
     /*
@@ -14,7 +17,11 @@ return [
     | you may specify any of the other wonderful drivers provided here.
     |
     | Supported: "file", "cookie", "database", "apc",
+<<<<<<< HEAD
     |            "memcached", "redis", "dynamodb", "array"
+=======
+    |            "memcached", "redis", "array"
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     |
     */
 
@@ -31,7 +38,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'lifetime' => env('SESSION_LIFETIME', 120),
+=======
+    'lifetime' => 120,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     'expire_on_close' => false,
 
@@ -72,7 +83,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'connection' => env('SESSION_CONNECTION', null),
+=======
+    'connection' => null,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -92,6 +107,7 @@ return [
     | Session Cache Store
     |--------------------------------------------------------------------------
     |
+<<<<<<< HEAD
     | While using one of the framework's cache driven session backends you may
     | list a cache store that should be used for these sessions. This value
     | must match with one of the application's configured cache "stores".
@@ -101,6 +117,15 @@ return [
     */
 
     'store' => env('SESSION_STORE', null),
+=======
+    | When using the "apc" or "memcached" session drivers, you may specify a
+    | cache store that should be used for these sessions. This value must
+    | correspond with one of the application's configured cache stores.
+    |
+    */
+
+    'store' => null,
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -126,10 +151,14 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'cookie' => env(
         'SESSION_COOKIE',
         Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
     ),
+=======
+    'cookie' => 'laravel_session',
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -164,11 +193,19 @@ return [
     |
     | By setting this option to true, session cookies will only be sent back
     | to the server if the browser has a HTTPS connection. This will keep
+<<<<<<< HEAD
     | the cookie from being sent to you when it can't be done securely.
     |
     */
 
     'secure' => env('SESSION_SECURE_COOKIE'),
+=======
+    | the cookie from being sent to you if it can not be done securely.
+    |
+    */
+
+    'secure' => env('SESSION_SECURE_COOKIE', false),
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     /*
     |--------------------------------------------------------------------------
@@ -183,6 +220,7 @@ return [
 
     'http_only' => true,
 
+<<<<<<< HEAD
     /*
     |--------------------------------------------------------------------------
     | Same-Site Cookies
@@ -198,4 +236,6 @@ return [
 
     'same_site' => 'lax',
 
+=======
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 ];

@@ -23,6 +23,7 @@
     @include('partials.Sidebar')
 
     @if (Auth::guest())
+<<<<<<< HEAD
         <div id="design" class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -58,6 +59,43 @@
         </div>
 
         @include('partials.Footer')
+=======
+    <div id="design" class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h1><strong>Whats new this week?</strong></h1></div>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="posts">
+            @foreach($adminposts as $adminpost)
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="title">
+                            <a href="{{ route('adminpost.show' , $adminpost->id) }}" class="btn btn-primary btn-neutral"> {{ $adminpost->title }}</a>
+                        </h1>
+                    </div>
+
+                    <div class="card-body">
+                        <h3>{{ $adminpost->content }}</h3>
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="{{ route('user.show', $adminpost->user_id) }}"><p class="text-black">Posted by {{ $adminpost->user->name }} {{ $adminpost->created_at->diffForHumans()}} </p></a>
+                    </div>
+
+                </div>
+
+            @endforeach
+        </div>
+
+    </div>
+
+    @include('partials.Footer')
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
     @else
 
@@ -71,6 +109,7 @@
                 </div>
             </div>
             @can('isSuperAdmin', 'isAdmin', 'isAuthor')
+<<<<<<< HEAD
                 <div class="adminpost">
                     <form action="{{ route('adminpost') }}" method="post">
                         <input name="title" class="form-control" id="title" placeholder="Title">
@@ -80,6 +119,17 @@
                     </form>
                 </div>
             @endcan
+=======
+            <div class="adminpost">
+                <form action="{{ route('adminpost') }}" method="post">
+                    <input name="title" class="form-control" id="title" placeholder="Title">
+                    <textarea name="content" class="form-control" id="content" placeholder="Start typing"></textarea>
+                    <input name="submit_btn"  class='"btn btn-primary btn-round"' type="submit" id="Post_btn" value="Submit">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </form>
+            </div>
+                @endcan
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
 
             <div class="posts">
                 @foreach($adminposts as $adminpost)

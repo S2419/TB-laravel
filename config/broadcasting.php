@@ -11,7 +11,11 @@ return [
     | framework when an event needs to be broadcast. You may set this to
     | any of the connections defined in the "connections" array below.
     |
+<<<<<<< HEAD
     | Supported: "pusher", "ably", "redis", "log", "null"
+=======
+    | Supported: "pusher", "redis", "log", "null"
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
     |
     */
 
@@ -36,6 +40,7 @@ return [
             'secret' => env('PUSHER_APP_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
+<<<<<<< HEAD
                 'cluster' => env('eu'),
                 'useTLS' => true,
             ],
@@ -46,6 +51,13 @@ return [
             'key' => env('ABLY_KEY'),
         ],
 
+=======
+                'cluster' => 'eu',
+                'encrypted' => false,
+            ],
+        ],
+
+>>>>>>> 1c1a40f38470702bb4ee55d074fd66a0766f56fb
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
